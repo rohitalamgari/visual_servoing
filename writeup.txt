@@ -1,0 +1,14 @@
+For my DELTA_T, I decided to use an exponential decay function related to the iteration step and the difficulty. 
+Here is the equation: dt *= .45 ** ( (i / 50) - 3 - (DIFFICULTY * .8))
+
+I designed the heuristic for DELTA_T this way so that way our servoing moves faster at the start of the loop and at higher difficulties.
+
+I also had to change the L function from my initial implementation so my solution worked under the extreme cases. 
+
+Initially, I had what was on the in class slides. However, under the extreme case it started to diverge. 
+
+Since the velocities are all derived from the L matrix, I looked online to see other ways of how it was implemented and found this slideshow: https://dellaert.github.io/21S-8803MM/Readings/L7%20Visual%20Servo%20Control.pdf. 
+
+Here, some of the terms were divided by a lambda, and I replaced lambda with my focal length.
+
+Some of the key observations I had were that were that if dt is intially very big, then the whole system explodes. Additionally, my solutions all converged faster at higher difficulty levels. I think that this is because the dts were stronger, so they converged faster at the start. Furthermore, because there are rotation components introduced the error can reduce faster.
