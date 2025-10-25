@@ -9,6 +9,6 @@ Initially, I had what was on the in class slides. However, under the extreme cas
 
 Since the velocities are all derived from the L matrix, I looked online to see other ways of how it was implemented and found this slideshow: https://dellaert.github.io/21S-8803MM/Readings/L7%20Visual%20Servo%20Control.pdf. 
 
-Here, some of the terms were divided by a lambda, and I replaced lambda with my focal length.
+Here, some of the terms were divided by a lambda, and I replaced lambda with my focal length. I think this helped because certain terms of our L matrix didn't scale properly, and under large error differences it can make our system unstable or unable to converge.  
 
 Some of the key observations I had were that were that if dt is intially very big, then the whole system explodes. Additionally, my solutions all converged faster at higher difficulty levels. I think that this is because the dts were stronger, so they converged faster at the start. Furthermore, because there are rotation components introduced the error can reduce faster.
